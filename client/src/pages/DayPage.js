@@ -1,6 +1,6 @@
 import NavBar from '../components/NavBar';
 import styles from './DayPage.module.css';
-import GyRoom from '../assets/GyRoom.png';
+import GyRoom from '../assets/GyRoom_NoWall.webp';
 
 function DayPage() {
   return (
