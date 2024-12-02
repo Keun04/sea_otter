@@ -1,0 +1,7 @@
+.background {
+  background: linear-gradient(0, #98e4ff, #80b3ff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
