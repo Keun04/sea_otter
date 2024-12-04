@@ -16,28 +16,60 @@
 .logo {
   width: 80px;
   height: fit-content;
-}
-
-ul,
-li {
-  list-style: none; /* 리스트 불릿 제거 */
-  margin: 0; /* 여백 제거 */
-  padding: 0; /* 패딩 제거 */
+  cursor: pointer;
 }
 
 a {
   text-decoration: none; /* 밑줄 제거 */
   color: inherit; /* 부모 요소의 텍스트 색상 상속 */
+  display: block;
 }
 
 .navList {
   display: flex;
   align-items: center;
-  gap: 3vw;
-  color: #fff;
+  justify-content: center;
+  text-align: center;
+  gap: 2vw;
+  min-height: 5vw;
 }
 
 .navItem {
-  font-size: 24px;
-  font-weight: 500;
+  color: #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 10vw;
+}
+
+.navLink {
+  font-size: 28px;
+  font-weight: 550;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.defaultText,
+.hoverText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  transition: opacity 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+.hoverText {
+  display: none;
+}
+
+.navItem:hover .defaultText {
+  display: none;
+}
+
+.navItem:hover .hoverText {
+  display: block;
 }
