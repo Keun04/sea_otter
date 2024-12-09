@@ -3,45 +3,62 @@ import styles from './FancyButton.module.css';
 import splitStringUsingRegex from '../utils/splitStringUsingRegex';
 
 function FancyButton() {
-  const [isMouseEntered, setIsMouseEntered] = useState(false);
+  const [isMousePlayEntered, setIsMousePlayEntered] = useState(false);
+  const [isMousePortEntered, setIsMousePortEntered] = useState(false);
+  const [isMouseSunsetEntered, setIsMouseSunsetEntered] = useState(false);
 
   const getTransformStyles = (isMouseEntered, index, direction = 'up') => ({
     transform: `translateY(${isMouseEntered ? (direction === 'up' ? '-100%' : '100%') : '0%'})`,
     transitionDelay: `${index * 0.02}s`,
   });
 
-  const playChar = splitStringUsingRegex('놀이터');
-  const DayChar = splitStringUsingRegex('낮');
-  const PortChar = splitStringUsingRegex('포트폴리오');
-  const NightChar = splitStringUsingRegex('밤');
-  const maxLength = 5;
+  const playChar = splitStringUsingRegex('Play');
+  const dayChar = splitStringUsingRegex('  낮');
+  const portChar = splitStringUsingRegex('Portfolio');
+  const nightChar = splitStringUsingRegex('    밤    ');
+  const usChar = splitStringUsingRegex('About us');
+  const sunSet = splitStringUsingRegex('   노 을   ');
 
   return (
     <>
       <button
         className={styles.fancyBtn}
-        onMouseEnter={() => setIsMouseEntered(true)}
-        onMouseLeave={() => setIsMouseEntered(false)}
+        onMouseEnter={() => setIsMousePlayEntered(true)}
+        onMouseLeave={() => setIsMousePlayEntered(false)}
       >
-        <span className={styles.textContainer} style={{ width: `${maxLength}em` }}>
+        <span className={styles.textContainer}>
           {playChar.map((character, index) => (
             <span className={styles.charContainer} key={index}>
-              <span style={getTransformStyles(isMouseEntered, index, 'up')}>{character || ''}</span>
-              <span style={getTransformStyles(isMouseEntered, index, 'up')}>{DayChar[index] || ''}</span>
+              <span style={getTransformStyles(isMousePlayEntered, index, 'up')}>{character}</span>
+              <span style={getTransformStyles(isMousePlayEntered, index, 'up')}>{dayChar[index]}</span>
             </span>
           ))}
         </span>
       </button>
       <button
         className={styles.fancyBtn}
-        onMouseEnter={() => setIsMouseEntered(true)}
-        onMouseLeave={() => setIsMouseEntered(false)}
+        onMouseEnter={() => setIsMousePortEntered(true)}
+        onMouseLeave={() => setIsMousePortEntered(false)}
       >
-        <span className={styles.textContainer} style={{ width: `${maxLength}em` }}>
-          {PortChar.map((character, index) => (
+        <span className={styles.textContainer}>
+          {portChar.map((character, index) => (
             <span className={styles.charContainer} key={index}>
-              <span style={getTransformStyles(isMouseEntered, index, 'up')}>{character || ''}</span>
-              <span style={getTransformStyles(isMouseEntered, index, 'up')}>{NightChar[index] || ''}</span>
+              <span style={getTransformStyles(isMousePortEntered, index, 'up')}>{character || ' '}</span>
+              <span style={getTransformStyles(isMousePortEntered, index, 'up')}>{nightChar[index] || ''}</span>
+            </span>
+          ))}
+        </span>
+      </button>
+      <button
+        className={styles.fancyBtn}
+        onMouseEnter={() => setIsMouseSunsetEntered(true)}
+        onMouseLeave={() => setIsMouseSunsetEntered(false)}
+      >
+        <span className={styles.textContainer}>
+          {usChar.map((character, index) => (
+            <span className={styles.charContainer} key={index}>
+              <span style={getTransformStyles(isMouseSunsetEntered, index, 'up')}>{character || ' '}</span>
+              <span style={getTransformStyles(isMouseSunsetEntered, index, 'up')}>{sunSet[index] || ''}</span>
             </span>
           ))}
         </span>
