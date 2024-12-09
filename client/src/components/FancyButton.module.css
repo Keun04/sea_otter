@@ -1,0 +1,40 @@
+.fancyBtn {
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.textContainer {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
+
+.charContainer {
+  position: relative;
+  width: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.charContainer span {
+  display: inline-block;
+  white-space: pre;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.charContainer span:last-child {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+}
