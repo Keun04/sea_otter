@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import styles from './FancyButton.module.css';
 import splitStringUsingRegex from '../utils/splitStringUsingRegex';
+import { useNavigate } from 'react-router-dom';
 
 function FancyButton() {
   const [isMousePlayEntered, setIsMousePlayEntered] = useState(false);
   const [isMousePortEntered, setIsMousePortEntered] = useState(false);
   const [isMouseSunsetEntered, setIsMouseSunsetEntered] = useState(false);
+
+  const navigate = useNavigate();
 
   const getTransformStyles = (isMouseEntered, index, direction = 'up') => ({
     transform: `translateY(${isMouseEntered ? (direction === 'up' ? '-100%' : '100%') : '0%'})`,
@@ -25,6 +28,7 @@ function FancyButton() {
         className={styles.fancyBtn}
         onMouseEnter={() => setIsMousePlayEntered(true)}
         onMouseLeave={() => setIsMousePlayEntered(false)}
+        onClick={() => navigate('/')}
       >
         <span className={styles.textContainer}>
           {playChar.map((character, index) => (
@@ -39,6 +43,7 @@ function FancyButton() {
         className={styles.fancyBtn}
         onMouseEnter={() => setIsMousePortEntered(true)}
         onMouseLeave={() => setIsMousePortEntered(false)}
+        onClick={() => navigate('/night')}
       >
         <span className={styles.textContainer}>
           {portChar.map((character, index) => (
