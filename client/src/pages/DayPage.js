@@ -1,12 +1,14 @@
 import NavBar from '../components/NavBar';
 import styles from './DayPage.module.css';
-import GyRoom from '../assets/GyRoom_NoWall.webp';
+import GyIsland from '../assets/GyIsland.webp';
+import LIsland from '../assets/LIsland.webp';
 
 function DayPage() {
   return (
     <div className={styles.background}>
       <NavBar />
-      <img src={GyRoom} className={styles.gyRoom} />
+      <img src={GyIsland} className={styles.gyIsland} />
+      <img src={LIsland} className={styles.lIsland} />
     </div>
   );
 }

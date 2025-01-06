@@ -6,7 +6,20 @@
   align-items: center;
 }
 
-.gyRoom {
-  width: 50vw;
+.gyIsland {
+  width: 45vw;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 55%;
+  left: 28%;
+  height: fit-content;
+}
+
+.lIsland {
+  width: 45vw;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 55%;
+  right: -15%;
   height: fit-content;
 }
