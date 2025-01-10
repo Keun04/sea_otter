@@ -1,6 +1,6 @@
 .background {
   background: linear-gradient(0, #98e4ff, #80b3ff);
-  height: 100vh;
+  height: 150vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,7 @@
 
 .gyIsland {
   width: 45vw;
-  position: fixed;
+  position: absolute;
   transform: translate(-50%, -50%);
   top: 55%;
   left: 28%;
@@ -18,7 +18,7 @@
 
 .lIsland {
   width: 45vw;
-  position: fixed;
+  position: absolute;
   transform: translate(-50%, -50%);
   top: 55%;
   right: -15%;

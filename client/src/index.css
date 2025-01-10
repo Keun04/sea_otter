@@ -12,13 +12,14 @@
 html {
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 16px;
+  overflow: visible; /* overflow 관련 설정은 기본값을 유지 */
 }
 
 :root {
   --max-width: 1440px;
-  overflow: hidden;
 }
 
 body {
   margin: 0;
+  overflow: auto; /* body에서 스크롤 가능하도록 설정 */
 }
