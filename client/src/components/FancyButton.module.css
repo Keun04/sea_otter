@@ -1,0 +1,44 @@
+.fancyBtn {
+  font-size: 24px;
+  font-weight: 550;
+  /* font-style: italic; */
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.textContainer {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
+
+.textContainer span:last-child {
+  justify-content: left;
+  width: 1em;
+}
+
+.charContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+}
+
+.charContainer span {
+  display: inline-block;
+  white-space: pre;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.charContainer span:last-child {
+  position: absolute;
+  display: block;
+  top: 100%;
+  width: 1em;
+}
