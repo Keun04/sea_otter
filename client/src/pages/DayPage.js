@@ -9,7 +9,7 @@ import RoomModal from '../components/RoomModal';
 
 import GyIsland from '../assets/GyIsland.webp';
 import LIsland from '../assets/LIsland.webp';
-import GyRoomDay from '../assets/dayGY.png';
+import GyRoomDay from '../assets/GyRoomDay.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +20,9 @@ function DayPage() {
   useEffect(() => {
     ScrollTrigger.create({
       trigger: document.body,
-      start: 'top 80%',
+      start: 'center center',
+      end: 'bottom bottom',
+      markers: true,
       onEnter: () => {
         navigate('/night');
       },
@@ -37,7 +39,7 @@ function DayPage() {
       <img src={GyIsland} className={styles.gyIsland} onClick={handleGyIslandClick} />
       <img src={LIsland} className={styles.lIsland} />
 
-      <RoomModal isOpen={isGyRoomModalOpen} onClose={() => setIsGyRoomModalOpen(false)}>
+      <RoomModal type={'day'} isOpen={isGyRoomModalOpen} onClose={() => setIsGyRoomModalOpen(false)}>
         <img src={GyRoomDay} className={styles.roomImg} />
       </RoomModal>
     </div>

@@ -12,12 +12,20 @@
 }
 
 .modal {
-  background: linear-gradient(0, #98e4ff, #80b3ff);
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   max-width: 70vw;
+  height: 42vw;
   width: 100%;
+}
+
+.day {
+  background: linear-gradient(0, #98e4ff, #80b3ff);
+}
+
+.night {
+  background: linear-gradient(0, #745c97, #39375b);
 }
 
 .closeButton {
@@ -28,4 +36,5 @@
   border: none;
   font-size: 18px;
   cursor: pointer;
+  z-index: 1001;
 }

@@ -1,6 +1,6 @@
 .background {
   background: linear-gradient(0, #98e4ff, #80b3ff);
-  height: 150vh;
+  height: 200vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,4 +28,6 @@
 
 .roomImg {
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }

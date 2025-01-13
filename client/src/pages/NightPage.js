@@ -6,7 +6,7 @@ import RoomModal from '../components/RoomModal';
 
 import GyIsland from '../assets/GyIsland.webp';
 import LIsland from '../assets/LIsland.webp';
-import GyRoomDay from '../assets/dayGY.png';
+import GyRoomNight from '../assets/GyRoomNight.webp';
 
 function NightPage() {
   const [isGyRoomModalOpen, setIsGyRoomModalOpen] = useState(false);
@@ -21,8 +21,8 @@ function NightPage() {
       <img src={GyIsland} className={styles.gyIsland} onClick={handleGyIslandClick} />
       <img src={LIsland} className={styles.lIsland} />
 
-      <RoomModal isOpen={isGyRoomModalOpen} onClose={() => setIsGyRoomModalOpen(false)}>
-        <img src={GyRoomDay} className={styles.roomImg} />
+      <RoomModal type={'night'} isOpen={isGyRoomModalOpen} onClose={() => setIsGyRoomModalOpen(false)}>
+        <img src={GyRoomNight} className={styles.roomImg} />
       </RoomModal>
     </div>
   );
