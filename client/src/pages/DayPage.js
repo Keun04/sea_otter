@@ -22,7 +22,7 @@ function DayPage() {
 
     // GSAP 애니메이션 설정
     gsap.to(container, {
-      backgroundImage: 'linear-gradient(0, #745c97, #39375b)', // 변경할 색상
+      backgroundImage: 'linear-gradient(to bottom, #39375b 50%, #745c97 100%)', // 변경할 색상
       scrollTrigger: {
         trigger: container,
         start: 'top top', // 시작 지점
