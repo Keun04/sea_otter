@@ -34,7 +34,6 @@ function NightSection() {
 
   return (
     <div ref={containerRef} className={styles.background}>
-      <NavBar />
       <button onClick={() => setIsRoomOpen(true)} className={styles.fakeTrigger}>
         프로젝트 보기
       </button>
