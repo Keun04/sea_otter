@@ -1,12 +1,15 @@
 .container {
   height: 100%;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.5s ease;
+  background-image: linear-gradient(to bottom, #80b3ff, #98e4ff);
 }
 
 .section {
   height: 100vh;
+  position: relative;
 }
 
+/* 각 섹션 배경 이미지 → 보간 중엔 transparent 처리 */
 .day,
 .night,
 .sunset {

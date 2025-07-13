@@ -1,10 +1,7 @@
-// src/pages/sections/DaySection.js
-
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import NavBar from '../../components/NavBar';
 import RoomModal from '../../components/RoomModal';
 
 import GyIsland from '../../assets/GyIsland.webp';
@@ -43,7 +40,6 @@ function DaySection() {
 
   return (
     <div ref={containerRef} className={styles.background}>
-      <NavBar />
       <img src={GyIsland} className={styles.gyIsland} onClick={handleGyIslandClick} />
       <img src={LIsland} className={styles.lIsland} />
 

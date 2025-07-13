@@ -14,33 +14,44 @@ function FullPageContainer() {
 
   useEffect(() => {
     const container = containerRef.current;
+    const night = document.querySelector(`.${styles.night}`);
+    const sunset = document.querySelector(`.${styles.sunset}`);
 
-    // 전체 문서 기준 진행도 계산
+    // 낮 → 밤 전환
     ScrollTrigger.create({
-      trigger: container,
-      start: 'top top',
-      end: 'bottom bottom',
+      trigger: night,
+      start: 'top center',
+      end: 'bottom center',
       scrub: true,
       onUpdate: (self) => {
-        const progress = self.progress; // 0 ~ 1
+        const progress = self.progress;
+        const r1 = Math.round(128 + (57 - 128) * progress);
+        const g1 = Math.round(179 + (55 - 179) * progress);
+        const b1 = Math.round(255 + (91 - 255) * progress);
+        const r2 = Math.round(152 + (87 - 152) * progress);
+        const g2 = Math.round(228 + (55 - 228) * progress);
+        const b2 = Math.round(255 + (91 - 255) * progress);
 
-        let r, g, b;
+        container.style.backgroundImage = `linear-gradient(to bottom, rgb(${r1}, ${g1}, ${b1}), rgb(${r2}, ${g2}, ${b2}))`;
+      },
+    });
 
-        if (progress < 0.5) {
-          // 낮 → 밤 (0~0.5)
-          const p = progress / 0.5;
-          r = Math.round(173 + (87 - 173) * p);
-          g = Math.round(216 + (70 - 216) * p);
-          b = Math.round(230 + (115 - 230) * p);
-        } else {
-          // 밤 → 노을 (0.5~1)
-          const p = (progress - 0.5) / 0.5;
-          r = Math.round(87 + (198 - 87) * p); // 조정된 노을 색상
-          g = Math.round(70 + (124 - 70) * p);
-          b = Math.round(115 + (104 - 115) * p);
-        }
+    // 밤 → 노을 전환
+    ScrollTrigger.create({
+      trigger: sunset,
+      start: 'top bottom',
+      end: 'top center',
+      scrub: true,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        const r1 = Math.round(116 + (255 - 116) * progress);
+        const g1 = Math.round(92 + (94 - 92) * progress);
+        const b1 = Math.round(151 + (98 - 151) * progress);
+        const r2 = Math.round(57 + (255 - 57) * progress);
+        const g2 = Math.round(55 + (153 - 55) * progress);
+        const b2 = Math.round(91 + (102 - 91) * progress);
 
-        container.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        container.style.backgroundImage = `linear-gradient(to bottom, rgb(${r1}, ${g1}, ${b1}), rgb(${r2}, ${g2}, ${b2}))`;
       },
     });
 
