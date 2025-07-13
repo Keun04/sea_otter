@@ -1,47 +1,37 @@
+// src/pages/sections/DaySection.js
+
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import NavBar from '../components/NavBar';
-import styles from './DayPage.module.css';
-import RoomModal from '../components/RoomModal';
+import NavBar from '../../components/NavBar';
+import RoomModal from '../../components/RoomModal';
 
-import GyIsland from '../assets/GyIsland.webp';
-import LIsland from '../assets/LIsland.webp';
-import GyRoomDay from '../assets/GyRoomDay.webp';
+import GyIsland from '../../assets/GyIsland.webp';
+import LIsland from '../../assets/LIsland.webp';
+import GyRoomDay from '../../assets/GyRoomDay.webp';
+
+import styles from './DaySection.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function DayPage() {
+function DaySection() {
   const [isGyRoomModalOpen, setIsGyRoomModalOpen] = useState(false);
   const containerRef = useRef(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const container = containerRef.current;
 
-    // GSAP 애니메이션 설정
     gsap.to(container, {
-      backgroundImage: 'linear-gradient(to bottom, #39375b 50%, #745c97 100%)', // 변경할 색상
+      backgroundImage: 'linear-gradient(to bottom, #39375b 50%, #745c97 100%)',
       scrollTrigger: {
         trigger: container,
-        start: 'top top', // 시작 지점
-        end: 'bottom bottom', // 끝나는 지점
-        scrub: 1, // 스크롤에 따라 부드럽게 애니메이션
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 1,
       },
     });
 
-    // 스크롤 끝나면 밤 페이지로 이동
-    ScrollTrigger.create({
-      trigger: container,
-      start: 'bottom bottom',
-      onEnter: () => {
-        navigate('/night'); // 밤 페이지 라우팅
-      },
-    });
-
-    // Cleanup
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -64,4 +54,4 @@ function DayPage() {
   );
 }
 
-export default DayPage;
+export default DaySection;

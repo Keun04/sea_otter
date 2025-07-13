@@ -1,0 +1,12 @@
+.container {
+  height: 300vh; /* 섹션 3개 */
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+}
