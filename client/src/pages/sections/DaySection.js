@@ -7,6 +7,7 @@ import RoomModal from '../../components/RoomModal';
 import GyIsland from '../../assets/GyIsland.webp';
 import LIsland from '../../assets/LIsland.webp';
 import GyRoomDay from '../../assets/GyRoomDay.webp';
+// import MainHome from '../../assets/MainHome.webp';
 
 import styles from './DaySection.module.css';
 
@@ -40,8 +41,9 @@ function DaySection() {
 
   return (
     <div ref={containerRef} className={styles.background}>
-      <img src={GyIsland} className={styles.gyIsland} onClick={handleGyIslandClick} />
-      <img src={LIsland} className={styles.lIsland} />
+      {/* <img src={GyIsland} className={styles.gyIsland} onClick={handleGyIslandClick} />
+      <img src={LIsland} className={styles.lIsland} /> */}
+      {/* <img src={MainHome} className={styles.MainRoom} /> */}
 
       <RoomModal type={'day'} isOpen={isGyRoomModalOpen} onClose={() => setIsGyRoomModalOpen(false)}>
         <img src={GyRoomDay} className={styles.roomImg} />

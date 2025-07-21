@@ -7,6 +7,8 @@ import NightSection from './sections/NightSection';
 import SunsetSection from './sections/SunsetSection';
 import styles from './FullPageContainer.module.css';
 
+import MainVillage from '../components/MainVillage';
+
 gsap.registerPlugin(ScrollTrigger);
 
 function FullPageContainer() {
@@ -62,6 +64,7 @@ function FullPageContainer() {
 
   return (
     <div ref={containerRef} className={styles.container}>
+      <MainVillage />
       <section className={`${styles.section} ${styles.day}`}>
         <DaySection />
       </section>

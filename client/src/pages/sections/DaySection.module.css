@@ -27,9 +27,20 @@
 }
 
 .lIsland {
-  width: 45vw;
+  width: 42vw;
   transform: translate(-50%, -50%);
+  top: 54%;
   right: -15%;
+}
+
+.MainRoom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+  z-index: 2;
 }
 
 .roomImg {

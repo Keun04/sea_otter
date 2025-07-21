@@ -1,0 +1,14 @@
+.mainVillageContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none; /* 클릭 이벤트 방지 */
+}
+
+.mainVillageImg {
+  width: 100vw;
+  height: auto;
+  pointer-events: none; /* 클릭 이벤트 방지 */
+}
