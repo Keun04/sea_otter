@@ -1,5 +1,5 @@
 import styles from './MainVillage.module.css';
-import MainHome from '../assets/MainHome.webp';
+import MainHome from '../../assets/MainHome.webp';
 
 function MainVillage() {
   return (

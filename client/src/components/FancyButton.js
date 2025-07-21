@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import styles from './FancyButton.module.css';
 import splitStringUsingRegex from '../utils/splitStringUsingRegex';
-import { useNavigate } from 'react-router-dom';
 
 function FancyButton() {
   const [isMousePlayEntered, setIsMousePlayEntered] = useState(false);
   const [isMousePortEntered, setIsMousePortEntered] = useState(false);
   const [isMouseSunsetEntered, setIsMouseSunsetEntered] = useState(false);
 
-  const navigate = useNavigate();
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const getTransformStyles = (isMouseEntered, index, direction = 'up') => ({
     transform: `translateY(${isMouseEntered ? (direction === 'up' ? '-100%' : '100%') : '0%'})`,
@@ -28,7 +32,7 @@ function FancyButton() {
         className={styles.fancyBtn}
         onMouseEnter={() => setIsMousePlayEntered(true)}
         onMouseLeave={() => setIsMousePlayEntered(false)}
-        onClick={() => navigate('/')}
+        onClick={() => scrollToSection('day')}
       >
         <span className={styles.textContainer}>
           {playChar.map((character, index) => (
@@ -43,7 +47,7 @@ function FancyButton() {
         className={styles.fancyBtn}
         onMouseEnter={() => setIsMousePortEntered(true)}
         onMouseLeave={() => setIsMousePortEntered(false)}
-        onClick={() => navigate('/night')}
+        onClick={() => scrollToSection('night')}
       >
         <span className={styles.textContainer}>
           {portChar.map((character, index) => (
@@ -58,6 +62,7 @@ function FancyButton() {
         className={styles.fancyBtn}
         onMouseEnter={() => setIsMouseSunsetEntered(true)}
         onMouseLeave={() => setIsMouseSunsetEntered(false)}
+        onClick={() => scrollToSection('sunset')}
       >
         <span className={styles.textContainer}>
           {usChar.map((character, index) => (
