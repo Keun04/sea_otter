@@ -1,50 +1,10 @@
-.background {
-  /* background-image: linear-gradient(to bottom, #80b3ff 0%, #98e4ff 50%); */
+/* .background {
   position: relative;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color 0.2s ease;
-}
+} */
 
-.gyIsland,
-.lIsland {
-  position: absolute;
-  bottom: 0; /* or 원하는 위치로 */
-  top: 50%;
-
-  transform: translateX(-50%);
-  z-index: 1;
-  height: fit-content;
-  cursor: pointer;
-}
-
-.gyIsland {
-  width: 45vw;
-  transform: translate(-50%, -50%);
-  left: 28%;
-}
-
-.lIsland {
-  width: 42vw;
-  transform: translate(-50%, -50%);
-  top: 54%;
-  right: -15%;
-}
-
-.MainRoom {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: auto;
-  z-index: 2;
-}
-
-.roomImg {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
+/* background-image: linear-gradient(to bottom, #80b3ff 0%, #98e4ff 50%); */
