@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './components/App';
 import FullPageContainer from './pages/FullPageContainer';
+import GyRoom from './pages/rooms/GyRoom';
 
 function Main() {
   return (
@@ -8,8 +9,7 @@ function Main() {
       <App>
         <Routes>
           <Route path="/" element={<FullPageContainer />} />
-          {/* <Route path="/night" element={<NightPage />} /> */}
-          {/* <Route path="/sunset" element={<DayPage />} /> */}
+          <Route path="/gydayroom" element={<GyRoom />} />
         </Routes>
       </App>
     </BrowserRouter>

@@ -4,11 +4,19 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  pointer-events: none; /* 클릭 이벤트 방지 */
 }
 
 .mainVillageImg {
+  position: relative;
   width: 100vw;
   height: auto;
-  pointer-events: none; /* 클릭 이벤트 방지 */
+  cursor: pointer;
+  z-index: 10;
+
+  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.entering {
+  transform: scale(8) translateY(-30%);
+  opacity: 0;
 }
