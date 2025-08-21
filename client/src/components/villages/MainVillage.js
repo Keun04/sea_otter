@@ -20,12 +20,6 @@ function MainVillage() {
 
   return (
     <div className={styles.mainVillageContainer}>
-      {/* <img
-        className={`${styles.mainVillageImg} ${isEntering ? styles.entering : ''}`}
-        src={MainHome}
-        alt="섬"
-        onClick={handleEnter}
-      /> */}
       <img
         className={`${styles.mainVillageImg} ${isEntering ? styles.entering : ''}`}
         src={VillageDay}

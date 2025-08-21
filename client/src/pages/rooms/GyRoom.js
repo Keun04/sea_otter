@@ -1,10 +1,10 @@
 import styles from './GyRoom.module.css';
-import GyRoomDay from '../../assets/GyDayRoom.webp';
+import GyDrama from '../../assets/GyDrama.webp';
 
 function GyRoom() {
   return (
     <div className={styles.roomContainer}>
-      <img className={`${styles.gyRoomImg}`} src={GyRoomDay} alt="가영 방" />
+      <img className={`${styles.gyDramaImg}`} src={GyDrama} alt="가영 방 티비" />
     </div>
   );
 }

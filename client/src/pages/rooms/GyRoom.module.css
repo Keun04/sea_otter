@@ -1,4 +1,4 @@
-.roomContainer {
+/* .roomContainer {
   height: 100vh;
   background-color: #faf3e0;
   display: flex;
@@ -6,8 +6,31 @@
   align-items: center;
   justify-content: center;
   font-family: 'Arial', sans-serif;
+} */
+
+.roomContainer {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../../assets/GyDayRoom2.webp'); /* 방 사진을 배경으로 */
+  background-size: cover;
+  background-position: center;
+  position: relative; /* 자식 요소의 absolute 위치를 위한 기준점 설정 */
 }
 
-.gyRoomImg {
-  width: 100vw;
+.gyDramaImg {
+  position: absolute;
+  top: 205px;
+  right: 40px;
+  width: 8vw;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.gyDramaImg:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+.gyDramaImg:active {
+  transform: scale(0.95);
 }
